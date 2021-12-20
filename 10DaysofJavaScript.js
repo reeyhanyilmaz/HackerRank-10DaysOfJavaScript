@@ -152,7 +152,6 @@ function getLetter(s) {
 
     /* Day 3: Arrays */
 
-
     /**
 *   Return the second largest number in the array.
 *   @param {Number[]} nums - An array of numbers.
