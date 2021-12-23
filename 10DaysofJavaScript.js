@@ -1,4 +1,4 @@
-/******** Day 0: Hello, World! ********/
+/************** Day 0: Hello, World! **************/
 
 function greeting(parameterVariable) {
     // This line prints 'Hello, World!' to the console:
@@ -10,7 +10,7 @@ function greeting(parameterVariable) {
 
 
 
-/******** Day 1: Arithmetic Operators ********/
+/************** Day 1: Arithmetic Operators **************/
 
 function getArea(length, width) {
     let area;
@@ -28,8 +28,8 @@ function getPerimeter(length, width) {
 
 
 
-/******** Day 1: Functions ********/
- /* 1.Method*/
+/************** Day 1: Functions **************/
+ /* Method 1 */
 
  /*
  * Create the function factorial here
@@ -41,7 +41,7 @@ function factorial (n) {
     return n* factorial(n-1);
 }
 
-/* 2.Method */ 
+/* Method 2*/ 
  /*
  * Create the function factorial here
  */
@@ -55,7 +55,7 @@ function factorial (n) {
 
 
 
-/******** Day:2 Conditional Statements: If-Else ********/
+/************** Day:2 Conditional Statements: If-Else **************/
 
 function getGrade(score) {
     let grade;
@@ -77,11 +77,11 @@ function main() {
 
 
 
-/******** Day 2: Conditional Statements: Switch ********/
+/************** Day 2: Conditional Statements: Switch **************/
 
 /* Hint: You can get the letter at some index  in  using the syntax s[i] or s.charAt(i). */ 
 
-/* 1. method : s.charAt(i)*/ 
+/*  Method 1: s.charAt(i)*/ 
 
 function getLetter(s) {
     let letter;
@@ -129,7 +129,7 @@ function getLetter(s) {
 }
 
 
-/* 2. Method s[i] */
+/* Method 2: s[i] */
 
 function getLetter(s) {
     let letter;
@@ -150,7 +150,72 @@ function getLetter(s) {
     }
 
 
-    /* Day 3: Arrays */
+/************** Day 2: Loops **************/
+
+/* Method 1 */
+
+    var vowels = ["a","e", "i", "o", "u"]
+function vowelsAndConsonants(s) {
+    for ( var index = 0; index <s.length; index++)  {
+    if (vowels.includes(s[index])) {
+        console.log (s[index]);
+    }  
+}
+
+    for (var index = 0 ; index <s.length; index++) {
+    if (!vowels.includes(s[index])) {
+        console.log(s[index])
+        }
+    } 
+}
+
+
+/* Method 2 */
+var vowels = ['a', 'e', 'i', 'o', 'u']
+function vowelsAndConsonants(s) {
+    
+    for (var i = 0; i < s.length; i++)
+        {
+            if (vowels.indexOf(s[i]) > -1)
+                {
+                    console.log(s[i]);
+                }
+        }
+    
+    for (var j = 0; j < s.length; j++)
+        {
+            if (vowels.indexOf(s[j]) < 0)
+                {
+                    console.log(s[j]);
+                }
+        }
+    
+}
+
+
+/* Method 3 */
+
+function vowelsAndConsonants(s) {
+
+    const vowels = 'aeiou';   
+    var consonants = '';
+      
+    for (var i = 0; i < s.length; i++) {    
+    if (vowels.includes(s[i])) {
+    console.log(s[i]);   
+    } else {
+     consonants += s[i] + '\n';    
+    }     
+}
+    console.log(consonants.trim());
+}   
+    
+
+    
+
+
+
+/**************  Day 3: Arrays **************/
 
     /**
 *   Return the second largest number in the array.
