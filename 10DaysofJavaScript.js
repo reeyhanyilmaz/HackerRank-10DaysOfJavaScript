@@ -30,15 +30,14 @@ const firstString =('HackerRank ');
 console.log(firstInteger + parseInt(secondInteger));
 
 // Write code that uses console.log to print the sum of 'firstDecimal' and 'secondDecimal' (converted to a Number            type) on a new line.
-
 console.log(firstDecimal + parseFloat(secondDecimal)); // Number'da kullanılabilir.
+
 // Write code that uses console.log to print the concatenation of 'firstString' and 'secondString' on a new line. The        variable 'firstString' must be printed first.
 console.log(firstString.concat(secondString));
 
 
 
 /************** Day 1: Arithmetic Operators **************/
-
 function getArea(length, width) {
   let area;
   // Write your code here
@@ -77,6 +76,36 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 }
+
+
+/************** Day:1 Let and Const **************/
+
+/* Method 1*/
+function main() {
+  // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+  const PI= 3.141592653589793238462643383;
+  const r=2.6;
+  // Print the area of the circle:
+  let area = PI* r*r;
+  console.log(area)
+  // Print the perimeter of the circle:
+  let perimeter = 2* PI*r;
+console.log(perimeter)
+
+
+/* Method 2*/
+function main() {
+  // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+  const PI= Math.PI;
+  let r=parseFloat(readLine());
+  // Print the area of the circle:
+  let area = PI*  Math.pow(r,2);
+  console.log(area)
+  // Print the perimeter of the circle:
+  let perimeter = 2* PI*r;
+console.log(perimeter)
+
+
 
 /************** Day:2 Conditional Statements: If-Else **************/
 
