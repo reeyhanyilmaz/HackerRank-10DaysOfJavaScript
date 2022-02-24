@@ -91,7 +91,7 @@ function main() {
   // Print the perimeter of the circle:
   let perimeter = 2* PI*r;
 console.log(perimeter)
-
+}
 
 /* Method 2*/
 function main() {
@@ -104,7 +104,7 @@ function main() {
   // Print the perimeter of the circle:
   let perimeter = 2* PI*r;
 console.log(perimeter)
-
+}
 
 
 /************** Day:2 Conditional Statements: If-Else **************/
@@ -312,4 +312,40 @@ function reverseString(s) {
     ? console.log("s.split is not a function")
     : (s = s.split("").reverse().join(""));
   console.log(s);
-}
+};
+
+
+/************** Day:3 Throw **************/
+
+function isPositive(a) {
+  if(a>0){
+      return "YES"
+  } else if (a===0){
+    throw Error ("Zero Error")
+  } else if (a<0){
+    throw Error ("Negative Error")
+  }
+  //throw new Error şeklinde de kullanabiliridk. Burada özel bi hata yazdırmak için throw kullandık.
+};
+
+
+/************** Day:4 Create a Rectangle Object **************/
+
+/* Method 1 */
+function Rectangle(a, b) {
+  return {
+   length : a,
+   width : b,
+   perimeter : 2*(a+b),
+   area : a*b 
+  }
+  //object oluşturup istenen değerleri atadık. Return ile döndük. 
+};
+
+/* Method 2 */
+function Rectangle(a, b){
+  this.length = a;
+  this.width = b;
+  this. perimeter = 2*(a+b);
+  this.area = a*b;
+};
