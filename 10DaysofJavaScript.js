@@ -349,3 +349,58 @@ function Rectangle(a, b){
   this. perimeter = 2*(a+b);
   this.area = a*b;
 };
+
+
+/************** Day:4 Count Object **************/
+
+/* Method 1 */
+function getCount(objects) {
+  for (let p in objects){
+      return objects.filter(item => item.x == item.y).length;
+  }
+ };
+
+/* Method 2 */ 
+function getCount(objects) {
+
+  let count =0;
+  
+  for(let i=0; i<objects.length; i++){
+      if(objects[i].x == objects[i].y){ // objects'de x'in (y'nin) i. index'i.
+          count++;
+      }
+  }
+  return count;
+};
+
+/* Method 3 */
+function getCount(objects) {
+
+  let count = 0;
+  
+  for( let index in objects){
+      
+      if(objects[index].x == objects[index].y){
+          count++;
+      }
+  }  
+  return count;
+};
+
+
+/************** Day:4 Classes**************/
+
+class Polygon {
+  constructor(sides){
+      this.sides= sides;       
+    } 
+     
+    perimeter(){
+        let sum = 0;
+        
+       for(let i=0; i<this.sides.length; i++){
+        sum = sum + this.sides[i];  
+      }
+      return sum;
+  }   
+};
