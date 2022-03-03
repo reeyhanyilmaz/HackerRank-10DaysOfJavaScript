@@ -404,3 +404,17 @@ class Polygon {
       return sum;
   }   
 };
+
+
+/************** Day:5 Inheritance**************/
+Rectangle.prototype.area = function (){
+  return this.w * this.h;
+}
+
+class Square extends Rectangle {
+ constructor (s){
+     super();
+     this.h=s;
+     this.w=s;
+ }
+};
