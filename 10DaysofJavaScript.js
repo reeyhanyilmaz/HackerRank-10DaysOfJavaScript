@@ -418,3 +418,46 @@ class Square extends Rectangle {
      this.w=s;
  }
 };
+//rectangel superclass, square subclass. square rectangle'dan extends ile inharitance (miras alma) yaptı.
+
+
+/************** Day:5 Template Literals **************/
+
+/* Method 1 */
+function sides(literals, ...expressions) {
+    
+  let Area = expressions[0];
+  let Perimeter = expressions[1];
+  
+  let s1 = (Perimeter + islem(Area, Perimeter)) / 4; // yukaridaki islemi kod'a döktük.
+  let s2 = (Perimeter - islem (Area, Perimeter)) / 4;
+  return [s2, s1] // kücükten büyüge sirala
+}
+
+function islem( Area, Perimeter){
+return Math.sqrt(Math.pow(Perimeter,2) - (16*Area)) // yukarıdaki islemi kod'a döktük.
+};
+
+/* Method 2 */
+function sides(literals, ...expressions) {
+  var area = expressions[0];
+  var perimeter = expressions[1];
+  
+  var s1 = (perimeter + Math.sqrt(perimeter * perimeter  - (16 * area))) / 4; //tüm islemi tek satırda yaptık.
+  //console.log("s1: " + s1);
+  var s2 = (perimeter - Math.sqrt(perimeter * perimeter  - (16 * area))) / 4;
+  //console.log("s2: " + s2);
+  var array = [s1, s2];
+  array =  array.sort(function (a,b) {return a-b;}); //sıralamayı yaptık
+  return array;
+};
+
+/* Method 3 */
+function sides(literals, ...expressions) {
+  const [a,p] = expressions;
+  const root = Math.sqrt((p*p)-(16*a));
+  const s1 = (p+root)/4;
+  const s2 = (p-root)/4;
+
+  return ([s2,s1]);
+};
