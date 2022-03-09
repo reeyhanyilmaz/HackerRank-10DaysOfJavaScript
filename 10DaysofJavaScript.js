@@ -8,24 +8,20 @@ function greeting(parameterVariable) {
   console.log(parameterVariable);
 }
 
-
 /************** Day 0: Data Types **************/
 /* Method 1 */
-const firstString =('HackerRank ');
+const firstString = "HackerRank ";
 // Write code that uses console.log to print the sum of the 'firstInteger' and 'secondInteger' (converted to a Number        type) on a new line.
 console.log(firstInteger + Number(secondInteger));
 
 // Write code that uses console.log to print the sum of 'firstDecimal' and 'secondDecimal' (converted to a Number            type) on a new line.
 
-console.log(firstDecimal + Number(secondDecimal)); 
+console.log(firstDecimal + Number(secondDecimal));
 // Write code that uses console.log to print the concatenation of 'firstString' and 'secondString' on a new line. The        variable 'firstString' must be printed first.
-console.log(firstString+ secondString);
-
-
-
+console.log(firstString + secondString);
 
 /* Method 2 */
-const firstString =('HackerRank ');
+const firstString = "HackerRank ";
 // Write code that uses console.log to print the sum of the 'firstInteger' and 'secondInteger' (converted to a Number        type) on a new line.
 console.log(firstInteger + parseInt(secondInteger));
 
@@ -34,8 +30,6 @@ console.log(firstDecimal + parseFloat(secondDecimal)); // Number'da kullanılabi
 
 // Write code that uses console.log to print the concatenation of 'firstString' and 'secondString' on a new line. The        variable 'firstString' must be printed first.
 console.log(firstString.concat(secondString));
-
-
 
 /************** Day 1: Arithmetic Operators **************/
 function getArea(length, width) {
@@ -77,35 +71,33 @@ function factorial(n) {
   }
 }
 
-
 /************** Day:1 Let and Const **************/
 
 /* Method 1*/
 function main() {
   // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
-  const PI= 3.141592653589793238462643383;
-  const r=2.6;
+  const PI = 3.141592653589793238462643383;
+  const r = 2.6;
   // Print the area of the circle:
-  let area = PI* r*r;
-  console.log(area)
+  let area = PI * r * r;
+  console.log(area);
   // Print the perimeter of the circle:
-  let perimeter = 2* PI*r;
-console.log(perimeter)
+  let perimeter = 2 * PI * r;
+  console.log(perimeter);
 }
 
 /* Method 2*/
 function main() {
   // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
-  const PI= Math.PI;
-  let r=parseFloat(readLine());
+  const PI = Math.PI;
+  let r = parseFloat(readLine());
   // Print the area of the circle:
-  let area = PI*  Math.pow(r,2);
-  console.log(area)
+  let area = PI * Math.pow(r, 2);
+  console.log(area);
   // Print the perimeter of the circle:
-  let perimeter = 2* PI*r;
-console.log(perimeter)
+  let perimeter = 2 * PI * r;
+  console.log(perimeter);
 }
-
 
 /************** Day:2 Conditional Statements: If-Else **************/
 
@@ -312,152 +304,196 @@ function reverseString(s) {
     ? console.log("s.split is not a function")
     : (s = s.split("").reverse().join(""));
   console.log(s);
-};
-
+}
 
 /************** Day:3 Throw **************/
 
 function isPositive(a) {
-  if(a>0){
-      return "YES"
-  } else if (a===0){
-    throw Error ("Zero Error")
-  } else if (a<0){
-    throw Error ("Negative Error")
+  if (a > 0) {
+    return "YES";
+  } else if (a === 0) {
+    throw Error("Zero Error");
+  } else if (a < 0) {
+    throw Error("Negative Error");
   }
   //throw new Error şeklinde de kullanabiliridk. Burada özel bi hata yazdırmak için throw kullandık.
-};
-
+}
 
 /************** Day:4 Create a Rectangle Object **************/
 
 /* Method 1 */
 function Rectangle(a, b) {
   return {
-   length : a,
-   width : b,
-   perimeter : 2*(a+b),
-   area : a*b 
-  }
-  //object oluşturup istenen değerleri atadık. Return ile döndük. 
-};
+    length: a,
+    width: b,
+    perimeter: 2 * (a + b),
+    area: a * b,
+  };
+  //object oluşturup istenen değerleri atadık. Return ile döndük.
+}
 
 /* Method 2 */
-function Rectangle(a, b){
+function Rectangle(a, b) {
   this.length = a;
   this.width = b;
-  this. perimeter = 2*(a+b);
-  this.area = a*b;
-};
-
+  this.perimeter = 2 * (a + b);
+  this.area = a * b;
+}
 
 /************** Day:4 Count Object **************/
 
 /* Method 1 */
 function getCount(objects) {
-  for (let p in objects){
-      return objects.filter(item => item.x == item.y).length;
+  for (let p in objects) {
+    return objects.filter((item) => item.x == item.y).length;
   }
- };
+}
 
-/* Method 2 */ 
+/* Method 2 */
 function getCount(objects) {
+  let count = 0;
 
-  let count =0;
-  
-  for(let i=0; i<objects.length; i++){
-      if(objects[i].x == objects[i].y){ // objects'de x'in (y'nin) i. index'i.
-          count++;
-      }
+  for (let i = 0; i < objects.length; i++) {
+    if (objects[i].x == objects[i].y) {
+      // objects'de x'in (y'nin) i. index'i.
+      count++;
+    }
   }
   return count;
-};
+}
 
 /* Method 3 */
 function getCount(objects) {
-
   let count = 0;
-  
-  for( let index in objects){
-      
-      if(objects[index].x == objects[index].y){
-          count++;
-      }
-  }  
-  return count;
-};
 
+  for (let index in objects) {
+    if (objects[index].x == objects[index].y) {
+      count++;
+    }
+  }
+  return count;
+}
 
 /************** Day:4 Classes**************/
 
 class Polygon {
-  constructor(sides){
-      this.sides= sides;       
-    } 
-     
-    perimeter(){
-        let sum = 0;
-        
-       for(let i=0; i<this.sides.length; i++){
-        sum = sum + this.sides[i];  
-      }
-      return sum;
-  }   
-};
+  constructor(sides) {
+    this.sides = sides;
+  }
 
+  perimeter() {
+    let sum = 0;
 
-/************** Day:5 Inheritance**************/
-Rectangle.prototype.area = function (){
-  return this.w * this.h;
+    for (let i = 0; i < this.sides.length; i++) {
+      sum = sum + this.sides[i];
+    }
+    return sum;
+  }
 }
 
-class Square extends Rectangle {
- constructor (s){
-     super();
-     this.h=s;
-     this.w=s;
- }
+/************** Day:5 Inheritance**************/
+Rectangle.prototype.area = function () {
+  return this.w * this.h;
 };
-//rectangel superclass, square subclass. square rectangle'dan extends ile inharitance (miras alma) yaptı.
 
+class Square extends Rectangle {
+  constructor(s) {
+    super();
+    this.h = s;
+    this.w = s;
+  }
+}
+//rectangel superclass, square subclass. square rectangle'dan extends ile inharitance (miras alma) yaptı.
 
 /************** Day:5 Template Literals **************/
 
 /* Method 1 */
 function sides(literals, ...expressions) {
-    
   let Area = expressions[0];
   let Perimeter = expressions[1];
-  
+
   let s1 = (Perimeter + islem(Area, Perimeter)) / 4; // yukaridaki islemi kod'a döktük.
-  let s2 = (Perimeter - islem (Area, Perimeter)) / 4;
-  return [s2, s1] // kücükten büyüge sirala
+  let s2 = (Perimeter - islem(Area, Perimeter)) / 4;
+  return [s2, s1]; // kücükten büyüge sirala
 }
 
-function islem( Area, Perimeter){
-return Math.sqrt(Math.pow(Perimeter,2) - (16*Area)) // yukarıdaki islemi kod'a döktük.
-};
+function islem(Area, Perimeter) {
+  return Math.sqrt(Math.pow(Perimeter, 2) - 16 * Area); // yukarıdaki islemi kod'a döktük.
+}
 
 /* Method 2 */
 function sides(literals, ...expressions) {
   var area = expressions[0];
   var perimeter = expressions[1];
-  
-  var s1 = (perimeter + Math.sqrt(perimeter * perimeter  - (16 * area))) / 4; //tüm islemi tek satırda yaptık.
+
+  var s1 = (perimeter + Math.sqrt(perimeter * perimeter - 16 * area)) / 4; //tüm islemi tek satırda yaptık.
   //console.log("s1: " + s1);
-  var s2 = (perimeter - Math.sqrt(perimeter * perimeter  - (16 * area))) / 4;
+  var s2 = (perimeter - Math.sqrt(perimeter * perimeter - 16 * area)) / 4;
   //console.log("s2: " + s2);
   var array = [s1, s2];
-  array =  array.sort(function (a,b) {return a-b;}); //sıralamayı yaptık
+  array = array.sort(function (a, b) {
+    return a - b;
+  }); //sıralamayı yaptık
   return array;
-};
+}
 
 /* Method 3 */
 function sides(literals, ...expressions) {
-  const [a,p] = expressions;
-  const root = Math.sqrt((p*p)-(16*a));
-  const s1 = (p+root)/4;
-  const s2 = (p-root)/4;
+  const [a, p] = expressions;
+  const root = Math.sqrt(p * p - 16 * a);
+  const s1 = (p + root) / 4;
+  const s2 = (p - root) / 4;
 
-  return ([s2,s1]);
+  return [s2, s1];
+}
+
+/************** Day:5 Arrow Functions **************/
+
+/* Method 1 */
+function modifyArray(nums) {
+  //array dondurduk
+  for (let i = 0; i < nums.length; i++) {
+    //eger citse 2 ile carpacak
+    if (nums[i] % 2 === 0) {
+      nums[i] *= 2;
+      //eger tek ise 3 ile carpacak
+    } else {
+      nums[i] *= 3;
+    }
+  }
+  //return Array
+  return nums;
+};
+
+/* Method 2 */
+function modifyArray(nums) {
+  const func = nums.map(function(num) { // for yerine map ile donduk
+      
+      if (num % 2 == 0){
+        return 2*num;
+    }else{
+        return 3*num;
+          }
+  });
+  return func;
+};
+
+/* Method 3 */
+function modifyArray(nums) {
+  let Array1 = function(n) {
+      if(n % 2 == 0) 
+      return n * 2 // tek satırlı kodda süslü parantez kullanmayabiliriz.
+      else 
+      return n * 3
+   }
+   let Array2 = nums.map(Array1); // nums dizisinin içindeki bilgileri al ve Array1 değişkenine ata. map() yardımıyla Array1'e atadığın fonksiyonu kullanarak yeni bir Array2 dizisi elde et. map(); array'i tek tek döner ve yeni bir array olusturur.
+   return Array2
+}
+
+
+/* Method 4 */
+function modifyArray(nums) {
+  let Array1 = n => (n % 2 == 0) ? n * 2: n * 3 //arrow func ve ternary operator.
+  let Array2 = nums.map(Array1)
+  return Array2
 };
